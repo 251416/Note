@@ -1,46 +1,31 @@
 # Git
 将本地仓库推送到远端
-1. 确认当前仓库的远程地址
+
 ```bash
+# 1. 确认当前仓库的远程地址,会看到类似 origin 指向你当初克隆的源地址
 git remote -v
-```
-会看到类似 origin 指向你当初克隆的源地址。
 
-2. 添加新的远程地址（或修改 origin）
-
-方法一：添加一个新的 remote（保留 origin）
-```bash
+# 2. 添加新的远程地址（或修改 origin）
+# 方法一：添加一个新的 remote（保留 origin）
 git remote add new-origin http://lq-a550:3000/lq/src.git
-```
 
-然后推送：
-```bash
-git push new-origin --all   # 推送所有分支
-git push new-origin --tags   # 推送所有标签（如果需要）
-```
-
-方法二：直接修改 origin 地址
-
-```bash
+# 二：直接修改 origin 地址
 git remote set-url origin http://lq-a550:3000/lq/src.git
+
+# 3. 然后推送：
+git push new-origin --all	# 推送所有分支
+git push new-origin --tags	# 推送所有标签（如果需要）
 ```
 
-然后推送：
-```bash
-git push origin --all
-git push origin --tags
-```
-
-全局配置（推荐，适用于当前电脑的所有仓库）
+全局配置（适用于当前电脑的所有仓库）
 ```bash
 git config --global user.name "你的名字"
 git config --global user.email "你的邮箱@example.com"
 ```
 
-配置 Git 信任该证书（推荐）
+配置 Git 信任该证书
 ```bash
-# 临时解决（仅当前会话）
-git config --global http.sslVerify false
+git config --global http.sslVerify false # 临时解决（仅当前会话）
 ```
 
 # 计算机网络
