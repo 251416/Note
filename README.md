@@ -53,4 +53,5 @@ netsh interface portproxy show v4tov4
 查看cpu频率
 ```bash
 watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"
+sudo snap install jscpumonitor      # 图形化软件
 ```
