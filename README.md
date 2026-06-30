@@ -60,7 +60,10 @@ sudo nano /etc/hosts
 # Linux基础
 查看cpu频率
 ```bash
-watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"
+watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"   # 命令行
+```
+
+```bash
 sudo snap install jscpumonitor      # 图形化软件
 ```
 
