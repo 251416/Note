@@ -37,7 +37,6 @@ netsh interface portproxy add v4tov4 listenport=53000 listenaddress=0.0.0.0 conn
 # 2. 放行 53000 端口的入站规则
 New-NetFirewallRule -DisplayName "Allow 53000" -Direction Inbound -Protocol TCP -LocalPort 53000 -Action Allow -Profile Any
 
-
 # 后续更改
 # 1. 查看当前规则，确认要删除的目标（关键步骤）
 netsh interface portproxy show v4tov4
@@ -49,9 +48,50 @@ netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=53000 conn
 netsh interface portproxy show v4tov4
 ```
 
+Linux手动添加域名
+```bash
+# 1. 打开终端并编辑 hosts 文件
+sudo nano /etc/hosts
+
+# 2. 添加解析记录：在文件的末尾，按照 IP地址 域名 的格式添加一行
+192.168.137.1   pc-202501221000
+```
+
 # Linux基础
 查看cpu频率
 ```bash
 watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"
 sudo snap install jscpumonitor      # 图形化软件
+```
+
+安装Edge浏览器
+```bash
+# 1. 导入GPG密钥
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list'
+sudo rm microsoft.gpg
+
+# 2. 更新APT包列表并安装
+sudo apt update
+sudo apt install microsoft-edge-stable
+```
+
+安装Visual Studio Code
+```bash
+# 1. 安装依赖工具
+sudo apt update
+sudo apt install -y wget gpg
+
+# 2. 导入微软 GPG 密钥
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/packages.microsoft.gpg > /dev/null
+
+# 3. 添加 VS Code 官方仓库
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+
+# 4. 更新软件包列表
+sudo apt update
+
+# 5. 安装 VS Code
+sudo apt install code
 ```
