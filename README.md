@@ -64,7 +64,10 @@ watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"   # 命令行
 ```
 
 ```bash
-sudo snap install jscpumonitor      # 图形化软件
+sudo apt update
+sudo apt install snapd
+sudo snap install jscpumonitor      # 安装图形化软件
+sudo snap connect jscpumonitor:hardware-observe     # 连接硬件权限（重要）：为了能正常读取 CPU 温度、功耗和频率信息
 ```
 
 安装Edge浏览器
