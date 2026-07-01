@@ -60,14 +60,31 @@ sudo nano /etc/hosts
 # Linux基础
 查看cpu频率
 ```bash
-watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"   # 命令行
-```
+# 方式1 命令行
+watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"
 
-```bash
+# 方式2 安装图形化软件
 sudo apt update
 sudo apt install snapd
-sudo snap install jscpumonitor      # 安装图形化软件
+sudo snap install jscpumonitor
 sudo snap connect jscpumonitor:hardware-observe     # 连接硬件权限（重要）：为了能正常读取 CPU 温度、功耗和频率信息
+```
+
+安装 xRDP 远程桌面服务
+```bash
+# 更新软件源并安装
+sudo apt update
+sudo apt install xrdp -y
+
+# 启动服务并设置开机自启
+sudo systemctl enable xrdp
+sudo systemctl start xrdp
+
+# 将用户加入 ssl-cert 组：这一步是为了让 xRDP 能正常读取 SSL 证书，避免连接出错
+sudo adduser xrdp ssl-cert
+
+# 配置防火墙 开放 3389 端口
+sudo ufw allow 3389/tcp
 ```
 
 安装Edge浏览器
