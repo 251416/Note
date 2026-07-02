@@ -19,8 +19,8 @@ git push new-origin --tags	# 推送所有标签（如果需要）
 
 全局配置（适用于当前电脑的所有仓库）
 ```bash
-git config --global user.name "你的名字"
-git config --global user.email "你的邮箱@example.com"
+git config --global user.name "Your Name"
+git config --global user.email "You Email@example.com"
 ```
 
 配置 Git 信任该证书
