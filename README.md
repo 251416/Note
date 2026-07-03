@@ -48,7 +48,7 @@ netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=53000 conn
 netsh interface portproxy show v4tov4
 ```
 
-Linux手动添加域名
+Linux添加静态域名解析
 ```bash
 # 1. 打开终端并编辑 hosts 文件
 sudo nano /etc/hosts
