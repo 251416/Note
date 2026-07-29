@@ -7,10 +7,10 @@ git remote -v
 
 # 2. 添加新的远程地址（或修改 origin）
 # 方法一：添加一个新的 remote（保留 origin）
-git remote add new-origin https://lq-a550.local:3000/lq/src.git
+git remote add new-origin https://lq-a550.local:53000/lq/src.git
 
 # 二：直接修改 origin 地址
-git remote set-url origin https://lq-a550.local:3000/lq/src.git
+git remote set-url origin https://lq-a550.local:53000/lq/src.git
 
 # 3. 然后推送：
 git push new-origin --all	# 推送所有分支
