@@ -87,7 +87,7 @@ sudo adduser xrdp ssl-cert
 sudo ufw allow 3389/tcp
 ```
 
-安装Edge浏览器
+安装 Edge浏览器
 ```bash
 # 1. 导入GPG密钥
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -100,7 +100,7 @@ sudo apt update
 sudo apt install microsoft-edge-stable
 ```
 
-安装Visual Studio Code
+安装 Visual Studio Code
 ```bash
 # 1. 安装依赖工具
 sudo apt update
@@ -117,4 +117,11 @@ sudo apt update
 
 # 5. 安装 VS Code
 sudo apt install code
+```
+
+安装 GParted 图形化工具
+```bash
+sudo apt update
+sudo apt install gparted -y
+sudo gparted
 ```
