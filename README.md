@@ -119,7 +119,7 @@ sudo apt update
 sudo apt install code
 ```
 
-安装 GParted 图形化工具
+安装并启动 GParted 图形化工具
 ```bash
 sudo apt update
 sudo apt install gparted -y
