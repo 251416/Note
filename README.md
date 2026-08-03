@@ -1,6 +1,5 @@
 # Git
-将本地仓库推送到远端
-
+## 将本地仓库推送到远端
 ```bash
 # 1. 确认当前仓库的远程地址,会看到类似 origin 指向你当初克隆的源地址
 git remote -v
@@ -17,19 +16,48 @@ git push new-origin --all	# 推送所有分支
 git push new-origin --tags	# 推送所有标签（如果需要）
 ```
 
-全局配置（适用于当前电脑的所有仓库）
+## 全局配置（适用于当前电脑的所有仓库）
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "You Email@example.com"
 ```
 
-配置 Git 信任该证书
+## 配置 Git 信任该证书
 ```bash
 git config --global http.sslVerify false # 临时解决（仅当前会话）
 ```
 
+## 将Gitea注册为Windows服务
+1. 下载 NSSM 64 位：https://nssm.cc/download
+2. 解压，打开 管理员 CMD，进入 nssm\win64 目录
+3. 执行安装：
+```bash
+nssm.exe install Gitea
+```
+4. 弹出图形窗口，填写参数：
+- Path：E:\Gitea\gitea-1.25.4-gogit-windows-4.0-amd64.exe
+- Arguments：web --custom-path E:\Gitea\custom
+- Service name：Gitea
+- Display name：Gitea Git Service（没找到）
+- Startup directory：E:\Gitea
+【恢复选项（Recovery）】选项卡（没找到）：
+第一次失败、第二次失败、后续失败 → 重新启动服务（崩溃自动拉起）
+5. 启动服务：
+```bash
+net start Gitea
+```
+重启服务（如修改了app.ini）：
+```bash
+net stop Gitea
+net start Gitea
+```
+卸载服务：
+```bash
+nssm remove Gitea
+```
+
 # 计算机网络
-Windows共享网络端口转发
+## Windows共享网络端口转发
 ```powershell
 # 初始操作
 # 1. 端口转发/反向代理
@@ -48,7 +76,7 @@ netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=53000 conn
 netsh interface portproxy show v4tov4
 ```
 
-Linux添加静态域名解析
+## Linux添加静态域名解析
 ```bash
 # 1. 打开终端并编辑 hosts 文件
 sudo nano /etc/hosts
@@ -58,7 +86,7 @@ sudo nano /etc/hosts
 ```
 
 # Linux基础
-查看cpu频率
+## 查看cpu频率
 ```bash
 # 方式1 命令行
 watch -n 1 "grep 'cpu MHz' /proc/cpuinfo"
@@ -70,7 +98,7 @@ sudo snap install jscpumonitor
 sudo snap connect jscpumonitor:hardware-observe     # 连接硬件权限（重要）：为了能正常读取 CPU 温度、功耗和频率信息
 ```
 
-安装 xRDP 远程桌面服务
+## 安装 xRDP 远程桌面服务
 ```bash
 # 更新软件源并安装
 sudo apt update
@@ -87,7 +115,7 @@ sudo adduser xrdp ssl-cert
 sudo ufw allow 3389/tcp
 ```
 
-安装 Edge浏览器
+## 安装 Edge浏览器
 ```bash
 # 1. 导入GPG密钥
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -100,7 +128,7 @@ sudo apt update
 sudo apt install microsoft-edge-stable
 ```
 
-安装 Visual Studio Code
+## 安装 Visual Studio Code
 ```bash
 # 1. 安装依赖工具
 sudo apt update
@@ -119,7 +147,7 @@ sudo apt update
 sudo apt install code
 ```
 
-安装并启动 GParted 图形化工具
+## 安装并启动 GParted 图形化工具
 ```bash
 sudo apt update
 sudo apt install gparted -y
