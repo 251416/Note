@@ -27,35 +27,6 @@ git config --global user.email "You Email@example.com"
 git config --global http.sslVerify false # 临时解决（仅当前会话）
 ```
 
-## 将Gitea注册为Windows服务
-1. 下载 NSSM 64 位：https://nssm.cc/download
-2. 解压，打开 管理员 CMD，进入 nssm\win64 目录
-3. 执行安装：
-```bash
-nssm.exe install Gitea
-```
-4. 弹出图形窗口，填写参数：
-- Path：E:\Gitea\gitea-1.25.4-gogit-windows-4.0-amd64.exe
-- Arguments：web --custom-path E:\Gitea\custom
-- Service name：Gitea
-- Display name：Gitea Git Service（没找到）
-- Startup directory：E:\Gitea
-【恢复选项（Recovery）】选项卡（没找到）：
-第一次失败、第二次失败、后续失败 → 重新启动服务（崩溃自动拉起）
-5. 启动服务：
-```bash
-net start Gitea
-```
-重启服务（如修改了app.ini）：
-```bash
-net stop Gitea
-net start Gitea
-```
-卸载服务：
-```bash
-nssm remove Gitea
-```
-
 # 计算机网络
 ## Windows共享网络端口转发
 ```powershell
@@ -117,6 +88,7 @@ sudo ufw allow 3389/tcp
 
 ## 安装 Edge浏览器
 ```bash
+sudo apt install curl
 # 1. 导入GPG密钥
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -125,7 +97,7 @@ sudo rm microsoft.gpg
 
 # 2. 更新APT包列表并安装
 sudo apt update
-sudo apt install microsoft-edge-stable
+sudo apt install microsoft-edge-stable -y
 ```
 
 ## 安装 Visual Studio Code
@@ -144,7 +116,7 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] http
 sudo apt update
 
 # 5. 安装 VS Code
-sudo apt install code
+sudo apt install code -y
 ```
 
 ## 安装并启动 GParted 图形化工具
