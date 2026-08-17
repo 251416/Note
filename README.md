@@ -153,3 +153,10 @@ sudo apt update
 sudo apt install gparted -y
 sudo gparted
 ```
+
+## 安装 open-vm-tools
+```bash
+sudo apt update
+sudo apt install open-vm-tools open-vm-tools-desktop -y
+sudo reboot
+```
