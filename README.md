@@ -133,6 +133,11 @@ sudo apt install open-vm-tools open-vm-tools-desktop -y
 sudo reboot
 ```
 
+## 查看系统当前所有中断的统计信息
+```bash
+watch -n 0.1 'cat /proc/interrupts | grep -E "CPU|16:"'
+```
+
 # VxWorks
 # 查看IOAPIC实际映射
 ```bash
