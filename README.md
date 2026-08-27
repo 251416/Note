@@ -1,3 +1,21 @@
+- [Git](#git)
+	- [将本地仓库推送到远端](#将本地仓库推送到远端)
+	- [全局配置（适用于当前电脑的所有仓库）](#全局配置适用于当前电脑的所有仓库)
+	- [配置 Git 信任该证书](#配置-git-信任该证书)
+- [计算机网络](#计算机网络)
+	- [Windows共享网络端口转发](#windows共享网络端口转发)
+	- [Linux添加静态域名解析](#linux添加静态域名解析)
+- [Linux基础](#linux基础)
+	- [查看cpu频率](#查看cpu频率)
+	- [安装 xRDP 远程桌面服务](#安装-xrdp-远程桌面服务)
+	- [安装 Edge浏览器](#安装-edge浏览器)
+	- [安装 Visual Studio Code](#安装-visual-studio-code)
+	- [安装并启动 GParted 图形化工具](#安装并启动-gparted-图形化工具)
+	- [安装 open-vm-tools](#安装-open-vm-tools)
+	- [查看系统当前所有中断的统计信息](#查看系统当前所有中断的统计信息)
+- [VxWorks](#vxworks)
+	- [查看IOAPIC实际映射](#查看ioapic实际映射)
+
 # Git
 ## 将本地仓库推送到远端
 ```bash
@@ -139,7 +157,7 @@ watch -n 0.1 'cat /proc/interrupts | grep -E "CPU|16:"'
 ```
 
 # VxWorks
-# 查看IOAPIC实际映射
+## 查看IOAPIC实际映射
 ```bash
 -> vxbIoApicIntrShowAll
 IOAPIC_ID    = 0x02000000
