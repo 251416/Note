@@ -5,6 +5,8 @@
 - [计算机网络](#计算机网络)
 	- [Windows共享网络端口转发](#windows共享网络端口转发)
 	- [Linux添加静态域名解析](#linux添加静态域名解析)
+- [Windows基础](#windows基础)
+	- [计算sha256](#计算sha256)
 - [Linux基础](#linux基础)
 	- [查看cpu频率](#查看cpu频率)
 	- [安装 xRDP 远程桌面服务](#安装-xrdp-远程桌面服务)
@@ -72,6 +74,12 @@ sudo nano /etc/hosts
 
 # 2. 添加解析记录：在文件的末尾，按照 IP地址 域名 的格式添加一行
 192.168.137.1   pc-202501221000
+```
+
+# Windows基础
+## 计算sha256
+```powershell
+Get-FileHash "文件完整路径" -Algorithm SHA256
 ```
 
 # Linux基础
