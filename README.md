@@ -54,7 +54,7 @@ git config --global http.sslVerify false # 临时解决（仅当前会话）
 
 # 计算机网络
 
-## Windows共享网络端口转发
+## Windows端口转发
 
 ```powershell
 # 初始操作
