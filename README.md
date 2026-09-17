@@ -140,6 +140,18 @@ sudo adduser xrdp ssl-cert
 
 # 配置防火墙 开放 3389 端口
 sudo ufw allow 3389/tcp
+
+# 以完整的 Ubuntu 模式启动配置步骤：
+# 1.在远程 Ubuntu 上，打开终端，创建或编辑 ~/.xsessionrc 文件
+vim ~/.xsessionrc
+
+# 2.将以下内容粘贴进去（如果文件已存在，直接添加或覆盖）
+export GNOME_SHELL_SESSION_MODE=ubuntu
+export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+
+# 3.保存并退出，然后重启 xrdp 服务（或直接重启系统）
+sudo systemctl restart xrdp.service
 ```
 
 ## 安装 Edge浏览器
